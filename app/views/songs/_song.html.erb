@@ -1,0 +1,16 @@
+<div id="<%= dom_id song %>">
+  <p>
+    <strong>Title:</strong>
+    <%= song.title %>
+  </p>
+  <p>
+    <strong>Audio file:</strong>
+    <div data-controller="audio" data-audio-url-value="<%= url_for(song.audio_file) %>">
+      <button data-action="click->audio#toggle">Play</button>
+    </div>
+  </p>
+  <p>
+    <strong>Image:</strong>
+    <%= link_to song.image.filename, song.image if song.image.attached? %>
+  </p>
+</div>
